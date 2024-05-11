@@ -5,21 +5,18 @@ import Feed from "./components/Feed"
 import Widgets from "./components/Widgets"
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-    <main  className="grid grid-cols-9">
-      <section className="flex flex-col flex-end ml-16  ">
+    <div className='mx-auto lg:max-w-6xl  overflow-hidden'>
+      <main  className="grid grid-cols-9 max-h-screen">
         <SideBar/>
-      </section>
-      <section className="grow border-x md:max-w-xl">
         <Feed/>
-      </section>
-      <section className="mr-16 ">
         <Widgets/>
-      </section>
-    </main>
+      </main>
+    </div>
+    
     </>
   )
 }

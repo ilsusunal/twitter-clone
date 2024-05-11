@@ -22,7 +22,7 @@ export default function SideBar(){
                 {optionsData.map((option, index) => (
                 <div key={index} className='flex flex-row items-center hover:bg-zinc-800 p-2 w-full rounded-full'>
                     <img src={option.icon} alt={option.text} />
-                    <a href={option.link} className='ml-4'>{option.text}</a>
+                    <a href={option.link} className='ml-4 hidden md:inline'>{option.text}</a>
                 </div>
                 ))}
             </div>

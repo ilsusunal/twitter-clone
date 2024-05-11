@@ -11,7 +11,7 @@ export default function Widgets(){
 
     return (
         <>
-        <main className='col-span-3'>
+        <main className='col-span-2 hidden lg:inline'>
             <div className="flex items-center space-x-2 mt-3 px-3 w-full rounded-full bg-zinc-800 hover:bg-black hover:border border-solid border-white">
                 <img src={exploreIcon} alt="Search" className='w-6 h-8'/>
                 <input type="text" placeholder="Search" className="bg-transparent flex-1 outline-none text-gray-600"/>
