@@ -6,7 +6,11 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      flexGrow: {
+        2: '2'
+      }
+    },
   },
   plugins: [],
 }

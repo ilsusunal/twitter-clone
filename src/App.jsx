@@ -9,14 +9,14 @@ function App() {
 
   return (
     <>
-    <main  className="bg-black md:flex md:justify-between m-4 ">
-      <section className="ml-8 divide-white">
+    <main  className="grid grid-cols-9">
+      <section className="flex flex-col flex-end ml-16  ">
         <SideBar/>
       </section>
-      <section className="">
+      <section className="grow border-x md:max-w-xl">
         <Feed/>
       </section>
-      <section className="">
+      <section className="mr-16 ">
         <Widgets/>
       </section>
     </main>
