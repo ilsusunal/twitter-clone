@@ -1,16 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import SideBar from "./components/SideBar"
+import Feed from "./components/Feed"
+import Widgets from "./components/Widgets"
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <p className="read-the-docs">
-        İlsu
-      </p>
+    <main  className="bg-black md:flex md:justify-between m-4 ">
+      <section className="ml-8 divide-white">
+        <SideBar/>
+      </section>
+      <section className="">
+        <Feed/>
+      </section>
+      <section className="">
+        <Widgets/>
+      </section>
+    </main>
     </>
   )
 }
