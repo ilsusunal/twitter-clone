@@ -1,8 +1,18 @@
-export default function Feed(){
+import PostTweet from "./PostTweet"
 
+export default function Feed(){
     return (
         <>
-        <p>THIS IS FEED</p>
+        <header className="flex justify-around my-3">
+            <a href="/">For you</a>
+            <a href="">Following</a>
+        </header>
+        <div className="my-3">
+            <PostTweet/>
+        </div>
+        <div className="my-3">
+            FEED
+        </div>
         </>
     )
 }
