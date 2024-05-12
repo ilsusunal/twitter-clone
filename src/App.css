@@ -1,0 +1,9 @@
+.form-line, .form-label{
+    @apply block;
+}
+.form-line input{
+    @apply block border rounded-full bg-zinc-800 border-none hover:bg-black hover:border hover:border-solid hover:border-white mt-3 p-3 w-full 
+}
+.form-line .error-message{
+    @apply text-xs block text-sky-500
+}
