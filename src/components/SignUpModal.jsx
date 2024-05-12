@@ -31,7 +31,7 @@ export default function SignUpModal({closeModal}) {
         <div className="bg-sky-700 bg-opacity-20 spew-screen h-screen fixed flex items-center inset-0">
         <div className="max-w-xl mx-auto px-6 py-6 bg-black rounded-xl fixed inset-0 inset-y-8">
             <header className='flex items-start'>
-                <button onClick={() => {closeModal(false)}}>X</button>
+                <button onClick={() => {closeModal(false)}} className='font-md text-xl rounded-full w-8 h-8 bg-zinc-800'>X</button>
                 <img src={mainPageIcon} alt="X" className='max-w-8 mx-auto' />
             </header>
             <main className='px-16'>

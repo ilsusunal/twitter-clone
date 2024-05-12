@@ -1,6 +1,8 @@
 import axios from 'axios';
 import mainPageIcon from '../../public/x-logo2.svg';
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router-dom';
+import { LOCAL_STORAGE_USER_KEY } from '../constants';
 
 export default function SignInModal({closeModal}){
     const {
@@ -8,20 +10,31 @@ export default function SignInModal({closeModal}){
         handleSubmit,
         watch,
         formState: { errors },
-      } = useForm();
+      } = useForm({defaultValues:{
+        email : "Aric.Davis6@gmail.com",
+        password: "84c_H84_qQFDufs"
+      }});
+
+      const history = useHistory();
 
       const onSubmit = (data) => {
         console.log(data)
         axios.post("https://twitter-clone-node.onrender.com/users/login", data)
         .then(
             (response) => {
-                console.log(response)
+                if(response.status === 200){
+                    console.log(response.data.token);
+                    localStorage.setItem(LOCAL_STORAGE_USER_KEY, response.data.token);
+                    setTimeout(() => {
+                    history.push("/home");}, 2000);
+                }
+                
             })
         .catch((error) => {
-                console.log(error)
+                console.log(error);
             })
         .finally(() => {
-                console.log("register done.")
+                console.log("register done.");
             });
     }
     return(
@@ -29,7 +42,7 @@ export default function SignInModal({closeModal}){
         <div className="bg-sky-700 bg-opacity-20 spew-screen h-screen fixed flex items-center inset-0">
         <div className="max-w-xl mx-auto px-6 py-6 bg-black rounded-xl fixed inset-0 inset-y-8">
             <header className='flex items-start'>
-                <button onClick={() => {closeModal(false)}}>X</button>
+                <button onClick={() => {closeModal(false)}} className='font-md text-xl rounded-full w-8 h-8 bg-zinc-800'>X</button>
                 <img src={mainPageIcon} alt="X" className='max-w-8 mx-auto' />
             </header>
             <main className='mt-16 px-16 flex flex-col justify-items-center'>
@@ -51,7 +64,8 @@ export default function SignInModal({closeModal}){
                         </div>
                         <input {...register("password", { required: true })} type="password" placeholder="Password"/>
                     </label>
-                    <button className="mt-12 px-6 py-2 w-full h-12 rounded-full hidden lg:inline bg-sky-500 hover:bg-sky-700 lg:text-xl lg:font-medium">Sign In</button>
+                    <button className="mt-12 px-6 py-2 w-full h-12 rounded-full hidden lg:inline bg-sky-500 hover:bg-sky-700 lg:text-xl lg:font-medium">
+                        Sign In</button>
             </form>
             </main>
         </div>
