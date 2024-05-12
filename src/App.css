@@ -2,7 +2,7 @@
     @apply block;
 }
 .form-line input{
-    @apply block border rounded-full bg-zinc-800 border-none hover:bg-black hover:border hover:border-solid hover:border-white mt-3 p-3 w-full 
+    @apply block border rounded-md bg-black border border-white/30 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 mt-3 p-3 w-full 
 }
 .form-line .error-message{
     @apply text-xs block text-sky-500

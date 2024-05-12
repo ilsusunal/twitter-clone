@@ -16,7 +16,7 @@ export default function Widgets(){
                 <img src={exploreIcon} alt="Search" className='w-6 h-8'/>
                 <input type="text" placeholder="Search" className="bg-transparent flex-1 outline-none text-gray-600"/>
             </div>
-            <div className="my-8 flex flex-col rounded-2xl px-2 py-1 border border-solid border-white">
+            <div className="my-8 flex flex-col rounded-2xl px-2 py-1 border border-solid border-white/20">
                 <p>Trends For You</p>
                 {trendData.map((option, index) => (
                     <div key={index} className='flex flex-col cursor-pointer my-3 hover:bg-gray-900'>
