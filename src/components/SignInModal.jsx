@@ -64,7 +64,7 @@ export default function SignInModal({closeModal}){
                         </div>
                         <input {...register("password", { required: true })} type="password" placeholder="Password"/>
                     </label>
-                    <button className="mt-12 px-6 py-2 w-full h-12 rounded-full hidden lg:inline bg-sky-500 hover:bg-sky-700 lg:text-xl lg:font-medium">
+                    <button className="mt-12 px-6 py-2 w-full h-12 rounded-full  bg-sky-500 hover:bg-sky-700 lg:text-xl lg:font-medium">
                         Sign In</button>
             </form>
             </main>

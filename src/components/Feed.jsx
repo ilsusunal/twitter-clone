@@ -1,7 +1,10 @@
 import TweetBox from "./TweetBox";
 import refreshIcon from '../../public/refresh-icon.svg';
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 
 export default function Feed(){
+    const {user} = useContext(UserContext);
     return (
         <>
         <main className="col-span-7 lg:col-span-5 border-x mx-8 border-white/20">

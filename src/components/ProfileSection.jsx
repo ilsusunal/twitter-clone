@@ -1,7 +1,10 @@
 import { useHistory } from "react-router-dom";
-import { LOCAL_STORAGE_USER_KEY } from "../constants"
+import { LOCAL_STORAGE_USER_KEY } from "../constants";
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 
 export default function ProfileSection(){
+    const {user} = useContext(UserContext);
 
     const history = useHistory();
     const handleLogout = () => {
@@ -11,12 +14,12 @@ export default function ProfileSection(){
     return (
         <>
         <main className="flex items-center">
-            <img src="https://picsum.photos/200/300" alt="" className="my-4 rounded-full mr-8 object-cover w-10 h-10"/>
+            <img src={user.avatar} alt="" className="my-4 rounded-full mr-8 object-cover w-10 h-10"/>
             <div className>
-                <p>fullName</p>
-                <p>@userName</p>
+                <p>{user.fullname}</p>
+                <p>@{user.username}</p>
             </div>
-            <button onClick={handleLogout}>Log Out</button>
+            <button onClick={() => handleLogout()}>Log Out</button>
         </main>
         </>
     )
