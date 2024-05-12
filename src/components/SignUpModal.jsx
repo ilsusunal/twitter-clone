@@ -27,9 +27,13 @@ export default function SignUpModal() {
                 <label className="form-line mt-2">
                     <div className='flex justify-between items-end'>
                         <span className="form-label">Email</span>
-                        {errors.email && <span className="error-message">This field is required!</span>}
+                        {errors.email && <span className="error-message">{errors.email.message}</span>}
                     </div>
-                    <input {...register("email", { required: true })} type="email" placeholder="Enter your email."/>
+                    <input {...register("email", 
+                    { required: {value: true, message :"This field is required!"}, 
+                    pattern :{value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, 
+                    message: "Invalid email address"} })} type="email" placeholder="Enter your email."
+                    />
                 </label>
                 <label className="form-line mt-2">
                     <div className='flex justify-between items-end'>
