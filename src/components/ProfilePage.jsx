@@ -1,20 +1,24 @@
-import TweetBox from "./TweetBox";
 import refreshIcon from '../../public/refresh-icon.svg';
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 
-export default function Feed(){
+export default function ProfilePage(){
     const {user} = useContext(UserContext);
+
     return (
         <>
         <main className="col-span-7 lg:col-span-5 border-x mx-8 border-white/20">
             <header className="flex items-center border-b border-white/20 justify-around p-4  ">
-                <a href="/home" className="hover:font-bold">For you</a>
-                <a href="/home" className="hover:font-bold">Following</a>
+                <a href="/home" className="hover:font-bold">Back</a>
+                <p>{user.fullname}</p>
                 <img onClick="" className="w-8 h-8 cursor-pointer transition-all duration-500 ease-out hover:rotate-180 active:scale-125 "src={refreshIcon} alt="refresh" />
             </header>
             <div className="p-4">
-                <TweetBox/>
+                <img className='w-auto max-h-16' src="https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68" alt="Profile Header" />
+                <img src={user.avatar} alt="Profile Picture" className="mr-4 mt-4 rounded-full object-cover h-14 w-14"/>
+                <p>{user.fullname}</p>
+                <p>@{user.username}</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec condimentum mauris, eu aliquet erat. Pellentesque molestie elementum vulputate. </p>
             </div>
             <div className="border-t border-white/20 p-4">
                 FEED

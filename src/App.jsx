@@ -5,7 +5,7 @@ import EnterPage from "./components/EnterPage"
 import Feed from "./components/Feed"
 import Widgets from "./components/Widgets"
 import { Route, Switch } from 'react-router-dom'
-import { UserContextProvider } from './contexts/UserContext.jsx'
+import ProfilePage from './components/ProfilePage.jsx'
 
 function App() {
   
@@ -21,6 +21,11 @@ function App() {
           <Route path="/home">
             <SideBar/>
             <Feed/>
+            <Widgets/>
+          </Route>
+          <Route path="/profile">
+            <SideBar/>
+            <ProfilePage/>
             <Widgets/>
           </Route>
         </Switch>

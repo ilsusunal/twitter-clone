@@ -9,17 +9,16 @@ import ProfileSection from './ProfileSection';
 export default function SideBar(){
     
     const optionsData =[
-        {icon: mainPageIcon, text: " ", link: "/"},
-        {icon: homeIcon, text: "Home", link: "/"},
-        {icon: exploreIcon, text: "Explore", link: "/"},
-        {icon: notificationsIcon, text: "Notifications", link: "/"},
-        {icon: profileIcon, text: "Profile", link: "/"},
+        {icon: mainPageIcon, text: " ", link: "/home"},
+        {icon: homeIcon, text: "Home", link: "/home"},
+        {icon: exploreIcon, text: "Explore", link: "/home"},
+        {icon: notificationsIcon, text: "Notifications", link: "/home"},
+        {icon: profileIcon, text: "Profile", link: "/profile"},
     ]
 
     return (
         <>
         <main className='col-span-2 flex flex-col'>
-            {/*<a href="/"><img src={mainPageIcon} alt="MainPage" className='fill-white px-8 mt-3 h-14'/></a>*/}
             <div className='my-4 '>  
                 {optionsData.map((option, index) => (
                 <div key={index} className='flex flex-row items-center hover:bg-zinc-800 p-4 w-full rounded-full'>
