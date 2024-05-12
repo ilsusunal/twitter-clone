@@ -13,8 +13,8 @@ export default function ProfilePage(){
                 <p>{user.fullname}</p>
                 <img onClick="" className="w-8 h-8 cursor-pointer transition-all duration-500 ease-out hover:rotate-180 active:scale-125 "src={refreshIcon} alt="refresh" />
             </header>
-            <div className="p-4">
-                <img className='w-auto max-h-16' src="https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68" alt="Profile Header" />
+            <div className="">
+                <img className='w-auto max-h-32' src="https://picsum.photos/id/10/500/500" alt="Profile Header" />
                 <img src={user.avatar} alt="Profile Picture" className="mr-4 mt-4 rounded-full object-cover h-14 w-14"/>
                 <p>{user.fullname}</p>
                 <p>@{user.username}</p>
